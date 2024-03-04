@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+<div class="container card-card body">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Producto</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Precio">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Descripcion</label>
+        <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+        <label for="exampleFormControlInput1" class="form-label">Precio</label>
+        <input type="number" class="form-control" id="price" name="price" placeholder="Precio del productos">
+        <div>
+            <label for="formFileLg" class="form-label">Large file input example</label>
+            <input class="form-control form-control-lg" id="formFileLg" type="file" name="image_url">
+          </div>
+      </div>
+      <div class= "btn-group mt-4" role="group" aria-label="Basic outlined example">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="button" class="btn btn-danger">Modificar</button>
+        <button type="button" class="btn btn-info">Salir</button>
+      </div>
+  </div>
+</form>
+{% endblock %}
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargar Nuevo Producto</title>
+</head>
+<body>
+    <h1>Cargar Nuevo Producto</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name"><br><br>
+        
+        <label for="description">Descripción:</label><br>
+        <textarea id="description" name="description"></textarea><br><br>
+        
+        <label for="price">Precio:</label>
+        <input type="number" id="price" name="price" step="0.01"><br><br>
+        
+        <label for="image_url">Imagen:</label>
+        <input type="file" id="image_url" name="image_url"><br><br>
+        
+        <button type="submit">Guardar Producto</button>
+    </form>
+</body>
+</html> {% endcomment %}

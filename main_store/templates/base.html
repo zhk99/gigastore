@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      body {
+          background: linear-gradient(to right, #b57edc, #87a1d9); /* Lavanda a azul claro */
+      }
+
+      nav {
+          background-color: #6a82ab;
+      }
+  </style>
+    <title>Bienvenido a GIGA STORE</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">GIGA STORE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/"><script src="https://cdn.lordicon.com/lordicon.js"></script>
+            <lord-icon
+                src="https://cdn.lordicon.com/heexevev.json"
+                trigger="hover"
+                style="width:30px;height:30px"
+                title="INICIO">
+            </lord-icon></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-flex flex-column" href="{% url 'listar_productos' %}">
+            <script src="https://cdn.lordicon.com/lordicon.js"></script>
+            <lord-icon
+              src="https://cdn.lordicon.com/zhnxstxt.json"
+              trigger="hover"
+              style="width:30px;height:30px"
+              title="PRODUCTOS">
+          </lord-icon> 
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/">
+              <script src="https://cdn.lordicon.com/lordicon.js"></script>
+            <lord-icon
+                src="https://cdn.lordicon.com/cosvjkbu.json"
+                trigger="hover"
+                style="width:30px;height:30px"
+                title="CARRITO">
+            </lord-icon>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/">
+              <script src="https://cdn.lordicon.com/lordicon.js"></script>
+              <lord-icon
+              src="https://cdn.lordicon.com/egmlnyku.json"
+              trigger="hover"
+              style="width:30px;height:30px"
+              title="HABLA CON NOSOTROS">
+        </lord-icon>
+            </a>
+        </li>
+        </div>
+        </li>
+        <li class="nav">
+      <a class="nav-link" href="{% url 'controlpanel' %}">
+      <script src="https://cdn.lordicon.com/lordicon.js"></script>
+      <lord-icon
+          src="https://cdn.lordicon.com/hmqggwrl.json"
+          trigger="hover"
+          style="width:30px;height:30px">
+      </lord-icon>
+    </li>
+      <li class="nav">
+        <a class="nav-link" href="{% url 'login' %}">
+          <script src="https://cdn.lordicon.com/lordicon.js"></script>
+          <lord-icon
+        src="https://cdn.lordicon.com/xcxzayqr.json"
+        trigger="hover"
+        style="width:35px;height:35px">
+    </lord-icon>
+        </a>
+    </li>
+</div>
+    </ul>
+  </nav>
+  {% block content %}{% endblock %}
+  

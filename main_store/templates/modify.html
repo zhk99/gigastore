@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card" style="width: 40rem;">
+  <ul class="list-group">
+    {% for product in products %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      {{ product.name }}
+      <div>
+        <a class="btn btn-primary">Editar</a>
+        <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#verModal{{ product.id }}">Ver</button>
+      </div>
+    </li>
+
+    <div class="modal fade" id="verModal{{ product.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">{{ product.name }}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="{{ product.image_url.url }}" alt="{{ product.name }}" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </ul>
+</div>
+
+{% endblock %}

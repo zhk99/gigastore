@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+{% csrf_token %}
+<div class="row">
+    <div class="col-sm-3 mb-3 mb-sm-5">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Gestion de Produtos</h5>
+          <p class="card-text">Permite Crear, modificar y eliminar productos de la tienda</p>
+          <a href="{%url 'menu_producto'%}" class="btn btn-primary">Ir a gestion de Produtos</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Gestion de Usuarios</h5>
+          <p class="card-text">Permite crear, modificar y eliminar usuarios del sistema.</p>
+          <a href="/aggUser" class="btn btn-primary">Ir a Gestion de Usuario</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Cerrar Sesion</h5>
+          <p class="card-text">Permite crear, modificar y eliminar usuarios del sistema.</p>
+          <a href="/logout" class="btn btn-primary">cerrar Sesion</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

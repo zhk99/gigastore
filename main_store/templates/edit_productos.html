@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="container card-card body">
+      <div class="mb-3">
+        <label for="name" class="form-label">Producto</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Nombre del Producto" value="{{ product.name }}">
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Descripción</label>
+        <textarea class="form-control" id="description" name="description" rows="3" value="{{ product.description}}"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="price" class="form-label">Precio</label>
+        <input type="number" class="form-control" id="price" name="price" placeholder="Precio del Producto" value="{{ product.price}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="image_url" class="form-label">Imagen</label>
+        <input class="form-control" type="file" id="image_url" name="image_url">
+      </div>
+
+      <div class="btn-group mt-4" role="group" aria-label="Basic outlined example">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a class="btn btn-info" href="{% url 'menu_producto' %}" >Salir</a>
+      </div>
+    </div>
+  </form>
+{% endblock %}

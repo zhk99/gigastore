@@ -101,3 +101,35 @@ def cargar_producto(request):
 
     # Renderizar el formulario vacío o con errores
     return render(request, 'aggProductos.html')
+def editar_producto(request, pk):
+    if request.method == 'POST':
+        # Obtener el producto específico que se va a editar
+        product = get_object_or_404(Product, pk=pk)
+
+        # Actualizar los campos del producto con los datos del formulario
+        product.name = request.POST['name']
+        product.description = request.POST['description']
+        product.price = request.POST['price']
+
+        # Verificar si se proporcionó un nuevo archivo de imagen
+        image_file = request.FILES.get('image_url')
+        if image_file:
+            # Guardar la nueva imagen en la ruta especificada
+            product_image_path = os.path.join('product_images', image_file.name)
+            with open(os.path.join(settings.MEDIA_ROOT, product_image_path), 'wb') as destination:
+                for chunk in image_file.chunks():
+                    destination.write(chunk)
+
+            # Actualizar la ruta de la imagen en el objeto del producto
+            product.image_url.name = product_image_path
+
+        # Guardar los cambios en la base de datos
+        product.save()
+
+        return redirect('listar_productos')
+    
+    # Obtener el producto específico para renderizar el formulario con los datos existentes
+    product = get_object_or_404(Product, pk=pk)
+    
+    # Renderizar el formulario con los datos existentes del producto
+    return render(request, 'edit_productos.html', {'product': product})

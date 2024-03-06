@@ -26,31 +26,3 @@
   </div>
 </form>
 {% endblock %}
-
-{% comment %} <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cargar Nuevo Producto</title>
-</head>
-<body>
-    <h1>Cargar Nuevo Producto</h1>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <label for="name">Nombre:</label>
-        <input type="text" id="name" name="name"><br><br>
-        
-        <label for="description">Descripción:</label><br>
-        <textarea id="description" name="description"></textarea><br><br>
-        
-        <label for="price">Precio:</label>
-        <input type="number" id="price" name="price" step="0.01"><br><br>
-        
-        <label for="image_url">Imagen:</label>
-        <input type="file" id="image_url" name="image_url"><br><br>
-        
-        <button type="submit">Guardar Producto</button>
-    </form>
-</body>
-</html> {% endcomment %}

@@ -10,10 +10,13 @@
       body {
           background: linear-gradient(to right, #b57edc, #87a1d9); /* Lavanda a azul claro */
       }
+      .navbar-brand {
+        margin-right: auto;  /* Empuja el título a la izquierda */
+    }
 
-      nav {
-          background-color: #6a82ab;
-      }
+    .navbar-nav {
+        margin-left: auto;  /* Empuja los elementos del menú a la derecha */
+    }
   </style>
     <title>Bienvenido a GIGA STORE</title>
 </head>
@@ -70,7 +73,6 @@
         </li>
         </div>
         </li>
-        <li class="nav">
       <a class="nav-link" href="{% url 'controlpanel' %}">
       <script src="https://cdn.lordicon.com/lordicon.js"></script>
       <lord-icon
@@ -78,8 +80,6 @@
           trigger="hover"
           style="width:30px;height:30px">
       </lord-icon>
-    </li>
-      <li class="nav">
         <a class="nav-link" href="{% url 'login' %}">
           <script src="https://cdn.lordicon.com/lordicon.js"></script>
           <lord-icon
@@ -89,7 +89,6 @@
     </lord-icon>
         </a>
     </li>
-</div>
     </ul>
   </nav>
   {% block content %}{% endblock %}

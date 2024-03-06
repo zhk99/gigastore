@@ -32,7 +32,10 @@ urlpatterns = [
     path('aggUser/',views.aggUser, name='aggUser'),
     path('controlpanel/',views.controlpanel, name='controlpanel'),
     path('cargar_producto/', views.cargar_producto, name='cargar_producto'),
-     path('menu_producto/', views.menu_producto, name='menu_producto'),
+    path('menu_producto/', views.menu_producto, name='menu_producto'),
+    path('editar_producto/', views.editar_producto, name='editar_producto'),
+    path('editar_producto/<int:pk>/', views.editar_producto, name='editar_producto'),
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
